@@ -1,0 +1,134 @@
+/*
+In NativeScript, the app.css file is where you place CSS rules that
+you would like to apply to your entire application. Check out
+http://docs.nativescript.org/ui/styling for a full list of the CSS
+selectors and properties you can use to style UI components.
+
+/*
+In many cases you may want to use the NativeScript core theme instead
+of writing your own CSS rules. For a full list of class names in the theme
+refer to http://docs.nativescript.org/ui/theme.
+*/
+
+
+/*
+For example, the following CSS rule changes the font size of all UI
+components that have the btn class name.
+*/
+/*.btn {
+    font-size: 18;
+}*/
+
+.img {
+ margin-top:15;
+}
+.sizefont {
+    font-size: 30;
+    font-family: 'Courier New', Courier, monospace;
+}
+.sl{
+    background-color:#405DB3;
+}
+.center{
+    align-self: center;
+}
+
+
+
+.syllabus_button{
+   color: white;
+   font-size:12;
+   text-align: center;
+   padding-top:15;
+   font-weight: bold;
+}
+.syllabus_button_syllabus{
+    color: white;
+    font-size:11;
+    text-align: center;
+    padding-top:15;
+    font-weight: bold;
+    text-justify: inter-word;
+}
+
+.Action-Bar{
+    color: white;
+    background-color:#405DB3;
+    font-size:20;
+
+}
+
+
+.fa{
+    font-family: "Font Awwesome 5 Free" , "fa-solid-900", "fa-regular-400";
+}
+
+.sidedrawer-list-item {
+    color: white;
+    padding:25; 
+    height:75;
+}
+.sidedrawer_icon{
+    font-size:20;
+}
+.sidedrawer_text{
+    font-size:15;
+    font-weight:bold;
+    margin-left:20;
+}
+.hr-light {
+    background-color:white;
+}
+
+.pic{
+    background:url("~/app/image/psgpic.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height:94;
+}
+
+.icon{
+   height:50;
+   width:60;
+   margin-left:10;
+}
+
+.marginchange{
+    margin-top:15; 
+    font-size:16;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:black;
+}
+
+.result{
+    font-size: 30;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+    margin-top:8;
+    color: black;
+}
+
+.button{
+    color: white;
+    background-color:#556FBC;
+    width: 150;
+    font-size:16;
+    margin-top:10;
+}
+
+.semcgpa{
+    padding-top: 30;
+    margin-right:40;
+}
+
+.head{
+    font-size:23;
+    font-weight: bold;
+    margin-top: 6;
+    color:gray;
+}
+
+.loading{
+    font-size:20;
+    font-weight: bold;
+}
+

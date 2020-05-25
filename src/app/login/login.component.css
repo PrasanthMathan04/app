@@ -1,0 +1,72 @@
+/* Add mobile styles for the component here.  */
+.page {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .activity-indicator{
+    color:white
+    
+  }
+
+  .form {
+    padding-top:5;
+    padding-left: 30;
+    padding-right: 30;
+    flex-grow: 2;
+    background-color:rgb(43, 75, 171);
+  }
+  .input-field {
+    margin-top:45;
+  }
+  .input{
+    placeholder-color:white;
+    color: white;
+  }
+  .login{
+    vertical-align: middle;
+  }
+  
+  .logo {
+    margin-bottom: 12;
+    height: 90;
+  }
+  .header {
+    font-size:18;
+    text-align:center;
+    color:rgb(43, 75, 171);
+    font-weight:bold;
+  }
+
+  .backendheader{
+    font-size:18;
+    text-align: center;
+    color:white;
+    margin-top:15;
+    padding:15;
+    border-color: white;
+    border-width: 1;
+  }
+
+  .backendtitle{
+    color:white;
+    text-transform: uppercase;
+  }
+  
+  .backendstack{
+    background-color:rgb(43, 75, 171);
+    padding-top:15;
+    padding-left: 30;
+    padding-right: 30;
+  }
+  
+  .btn-primary {
+    margin: 30 5 25 5;
+    font-size: 16px;
+    color:rgb(43, 75, 171);
+    font-weight:bold;
+    background-color:whitesmoke;
+  }
+  
+
+  

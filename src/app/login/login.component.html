@@ -1,0 +1,32 @@
+<FlexboxLayout class="page">
+    <GridLayout rows="*,auto,*">
+    <StackLayout  class="login" row="0">
+       <Image #label  class="logo" src="~/app/image/psglogo.png"></Image>
+       <Label  class="header" text="Computer System And Design"></Label>
+    </StackLayout>   
+    <StackLayout class="form" row="1">
+       <GridLayout rows="auto,auto">
+           <StackLayout row="0" class="input-field">
+               <TextField class="input" hint="Id" [(ngModel)]="credentials.username" maxLength="3"
+                   returnKeyType="next" ></TextField>
+               <StackLayout class="hr-light"></StackLayout>
+           </StackLayout>
+           <StackLayout row="1" class="input-field">
+               <TextField  class="input" 
+                   hint="Password" secure="true" [(ngModel)]="credentials.password" maxLength="3"
+                   ></TextField>
+               <StackLayout class="hr-light"></StackLayout>
+           </StackLayout>
+       </GridLayout>
+   <Button text="Log In" (tap)="submit()" class="btn btn-primary btn-rounded-lg"></Button>
+</StackLayout>
+    <StackLayout class="backendstack" row="2"  [visibility]="board ? 'visible' : 'collapse'">
+   <Label class="backendtitle" [text]=logintitle></Label>
+   <ScrollView orientation="vertical">
+   <Label class="backendheader" textWrap="true" [text]=logintots></Label>
+</ScrollView>  
+</StackLayout>
+<ActivityIndicator class="activity-indicator" [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'"
+            rowSpan="3"  horizontalAlignment="center"  margin="100px"></ActivityIndicator>
+</GridLayout>
+</FlexboxLayout>  

@@ -1,0 +1,18 @@
+<Page>
+    <ActionBar  class="Action-Bar">
+        <GridLayout columns="auto,auto,*">
+            <Label row="0" col="0" text="&#xf053;"   class="fa" style="padding:15" [nsRouterLink]="['/home']"></Label>
+            <Label row="0" col="1" [text]="labelicon"  style="padding:15;" class="fa" ></Label>
+            <Label row="0" col="2" [text]="webname" textWrap="true"  style="margin-top:11;font-weight:bold;font-size:18;"></Label>
+        </GridLayout>
+      </ActionBar>
+      <StackLayout>
+      <GridLayout>
+        <WebView  (loadStarted)="onLoadStarted($event)" 
+        (loadFinished)="onLoadFinished($event)" [src]="webViewSrc"></WebView>
+        <GridLayout  [visibility]="loadpage ? 'visible' : 'collapse'" horizontalAlignment="center" >
+          <ActivityIndicator class="activity-indicator"   busy="true"></ActivityIndicator>
+        </GridLayout>
+      </GridLayout>
+     </StackLayout>
+</Page>

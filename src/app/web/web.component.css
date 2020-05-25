@@ -1,0 +1,15 @@
+/* Add mobile styles for the component here.  */
+.Action-Bar{
+    color: white;
+    background-color:#405DB3;
+    
+}
+.fa{
+    font-family: "Font Awwesome 5 Free" , "fa-solid-900", "fa-regular-400";
+    font-size:18;
+}
+
+.activity-indicator{
+    color: #405DB3;   
+  }
+

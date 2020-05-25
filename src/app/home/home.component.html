@@ -1,0 +1,131 @@
+<Page>
+    <ActionBar class="Action-Bar" flat="true">
+        <GridLayout columns="auto,*">
+            <Label row="0" col="0" #label fontSize="20" text="&#xf0c9;"  class="fa" (tap)="openDrawer(label)" style="padding:15;"></Label>
+            <Label row="0" col="1" text="Computer System Design" textWrap="true"  style="margin-top:11;font-weight:bold;"></Label>
+        </GridLayout>
+    </ActionBar>
+    
+    <RadSideDrawer drawerTransition="PushTransition">
+        <GridLayout tkDrawerContent class="drawer-container">
+            <GridLayout rows="auto,*" class="sideStackLayout">
+                <StackLayout class="sideTitleStackLayout" class="pic" orientation="horizontal">
+                </StackLayout>
+                <ScrollView row="1">
+                    <StackLayout class="sl">
+                        <StackLayout *ngFor="let draw of drawname;let i = index" class="list-group-item">
+                        <GridLayout columns="auto, *" (tap)="changePage(i)" class="sidedrawer-list-item">
+                            <Label row="0" col="0" [text]="drawicon[i]" class="fa sidedrawer_icon"></Label>
+                            <Label row="0" col="1" [text]="drawname[i]"  class="sidedrawer_text"></Label>
+                        </GridLayout>
+                        <StackLayout class="hr-light"></StackLayout>
+                        </StackLayout>
+                        <GridLayout columns="auto, *" [nsRouterLink]="['/login']" class="sidedrawer-list-item">
+                            <Label row="0" col="0" text="&#xf2f5;" class="fa sidedrawer_icon"></Label>
+                            <Label row="0" col="1" text="LOG OUT" class="sidedrawer_text"></Label>
+                        </GridLayout>
+                        <StackLayout class="hr-light"></StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </GridLayout>
+        </GridLayout>
+        <StackLayout tkMainContent>
+                <StackLayout>
+                    <TabView selectedTabTextColor="white" tabBackgroundColor="#556FBC"
+                        androidSelectedTabHighlightColor="white">
+                        <StackLayout *tabItem="{title: 'Time Table'}">
+                            <StackLayout orientation="vertical">
+                                <ImageZoom class="img" [src]=timetable  maxZoom="5" minZoom="1">
+                                </ImageZoom>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout *tabItem="{title: 'Syllabus'}">
+                            <StackLayout orientation="vertical">
+                                <GridLayout rows="*" columns="*,*,*,*,*,*,*" class="sl" height="50">
+                                    <Label row="0" col="0" class="syllabus_button_syllabus" text="1"
+                                        (tap)="pdfChange('1')"></Label>
+                                    <Label row="0" col="1" class="syllabus_button_syllabus" text="2"
+                                        (tap)="pdfChange('2')"></Label>
+                                    <Label row="0" col="2" class="syllabus_button_syllabus" text="3"
+                                        (tap)="pdfChange('3')"></Label>
+                                    <Label row="0" col="3" class="syllabus_button_syllabus" text="4"
+                                        (tap)="pdfChange('4')"></Label>
+                                    <Label row="0" col="4" class="syllabus_button_syllabus" text="5"
+                                        (tap)="pdfChange('5')"></Label>
+                                    <Label row="0" col="5" class="syllabus_button_syllabus" text="6"
+                                        (tap)="pdfChange('6')"></Label>
+                                    <Label row="0" col="6" class="syllabus_button_syllabus" text="ELECTIVE"
+                                        (tap)="pdfChange('elective')"></Label>
+                                </GridLayout>
+                                <Page xmlns="http://schemas.nativescript.org/tns.xsd" class="page">
+                                    <ui:PDFViewNg id="pdfview" [src]=syllabus></ui:PDFViewNg>
+                                </Page>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout *tabItem="{title: 'Calculator'}">
+                            <StackLayout>
+                                    <TabView selectedTabTextColor="white" tabBackgroundColor="#556FBC"
+                                     androidSelectedTabHighlightColor="white"
+                                        androidTabsPosition="bottom">
+                                        <StackLayout  *tabItem="{title: 'CGPA'}">
+                                            <ScrollView height="100%">
+                                                <StackLayout orientation="vertical">
+                                            <StackLayout *ngFor="let sem of semOptions;let i = index" class="marginchange">
+                                                <StackLayout orientation="horizontal" horizontalAlignment="center">
+                                                    <Label [text]="sem" textWrap="true" style="padding-top: 10;padding-right:8"></Label>
+                                                    <TextField hint="Enter GPA" keyboardType="number" maxLength="4"
+                                                        [(ngModel)]="entercgpa[i]"></TextField>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            <Button  class="button" text="Calculate"
+                                                (tap)="validation()"></Button>
+                                            <StackLayout orientation="horizontal" horizontalAlignment="center"
+                                                class="result">
+                                                <Label class="result" text="CGPA : "></Label>
+                                                <Label class="result" [text]="displaycgpa"></Label>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        </ScrollView>
+                                        </StackLayout>
+                                        <StackLayout *tabItem="{title: 'GPA'}">
+                                            <GridLayout rows="*" columns="*,*,*,*,*,*" class="sl" height="50">
+                                                <Label row="0" col="0" class="syllabus_button" text="1"
+                                                    (tap)="listOfSubjects('1')"></Label>
+                                                <Label row="0" col="1" class="syllabus_button" text="2"
+                                                    (tap)="listOfSubjects('2')"></Label>
+                                                <Label row="0" col="2" class="syllabus_button" text="3"
+                                                    (tap)="listOfSubjects('3')"></Label>
+                                                <Label row="0" col="3" class="syllabus_button" text="4"
+                                                    (tap)="listOfSubjects('4')"></Label>
+                                                <Label row="0" col="4" class="syllabus_button" text="5"
+                                                    (tap)="listOfSubjects('5')"></Label>
+                                                <Label row="0" col="5" class="syllabus_button" text="6"
+                                                    (tap)="listOfSubjects('6')"></Label>
+                                            </GridLayout>
+                                            <ScrollView height="100%">
+                                                <StackLayout orientaion="vertical">
+                                                    <Label [text]="selected_sem"  horizontalAlignment="center" class="head"></Label>
+                                                    <StackLayout *ngFor="let subjects of list_of_subjects;let j = index">
+                                                        <StackLayout orientation="horizontal"  horizontalAlignment="center" class="marginchange" width="100%">
+                                                            <Label [text]="subjects" textWrap="true" style="padding-top: 10;padding-right:8;text-align:left" width="50%"></Label>
+                                                            <TextField  hint="Enter Grade" keyboardType="number"
+                                                                [(ngModel)]="entergpa[j]" width="30%"  maxLength="5"></TextField>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                    <Button class="button" text="Calculate"
+                                                        (tap)="validationGpa(selected_sem)"></Button>
+                                                    <StackLayout orientation="horizontal" horizontalAlignment="center">
+                                                        <Label class="result" text="GPA : "></Label>
+                                                        <Label class="result" [text]="displaygpa"></Label>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </ScrollView>
+                                        </StackLayout>
+                                    </TabView>
+                            </StackLayout>
+                        </StackLayout>
+                    </TabView>
+                </StackLayout>
+        </StackLayout>
+    </RadSideDrawer>
+    </Page>
